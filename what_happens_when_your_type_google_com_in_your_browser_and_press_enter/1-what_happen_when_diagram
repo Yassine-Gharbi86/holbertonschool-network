@@ -1,0 +1,12 @@
+```mermaid
+graph TD
+    Client["User's Browser"] -->|1. DNS Request| DNS["DNS Server"]
+    DNS -->|2. Returns IP| Client
+    Client -->|3. Connects to IP:443 (HTTPS)| Firewall["Firewall"]
+    Firewall -->|4. Passes encrypted traffic| LoadBalancer["Load Balancer"]
+    LoadBalancer -->|5. Routes request| WebServer["Web Server (Nginx)"]
+    WebServer -->|6. Passes request| AppServer["Application Server"]
+    AppServer -->|7. Queries| Database["Database (MySQL)"]
+    Database -->|8. Returns data| AppServer
+    AppServer -->|9. Generates page| WebServer
+    WebServer -->|10. Serves page| Client

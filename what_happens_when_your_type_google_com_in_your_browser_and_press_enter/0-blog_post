@@ -1,0 +1,32 @@
+What Happens When You Type https://www.google.com in Your Browser and Press Enter
+
+
+When you type a URL like https://www.google.com and hit Enter, a lot happens behind the scenes to load the webpage. Let’s break down the key steps and technologies involved:
+
+1. DNS Request
+Your browser asks the Domain Name System (DNS) to translate www.google.com into an IP address (like 142.250.190.4). DNS is like the internet’s phonebook, converting human-friendly names to machine-friendly numbers.
+
+2. TCP/IP Connection
+Once your browser knows the IP, it establishes a TCP/IP connection with the Google server. TCP (Transmission Control Protocol) ensures the data is sent reliably, and IP (Internet Protocol) routes it to the right place.
+
+3. Firewall Check
+Both your local device and Google’s servers have firewalls—security tools that check the traffic to block any harmful or unauthorized requests.
+
+4. HTTPS / SSL Encryption
+Since the URL uses HTTPS, the browser and server perform an SSL/TLS handshake to encrypt the connection. This protects your data from eavesdropping or tampering.
+
+5. Load Balancer
+Google uses load balancers to distribute incoming requests evenly across many servers. This keeps things fast and reliable, preventing any single server from getting overwhelmed.
+
+6. Web Server
+The request reaches a web server (like Nginx or Apache), which handles HTTP requests and serves static content such as images, HTML, and CSS files.
+
+7. Application Server
+If your request needs dynamic content (like search results), the web server passes it to an application server. This server runs the code to process your request, fetch data, and prepare the response.
+
+8. Database
+The application server often queries a database to retrieve or update information. For Google, this could mean fetching indexed pages or user preferences.
+
+Final Step: Response Sent Back
+Once the data is ready, it flows back through the application and web servers, passes through the load balancer, and travels encrypted over the internet back to your browser, which renders the page you see.
+
